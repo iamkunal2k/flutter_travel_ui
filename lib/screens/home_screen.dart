@@ -23,8 +23,11 @@ class _HomeScreenState extends State<HomeScreen> {
       decoration: BoxDecoration(
           color: Theme.of(context).accentColor,
           borderRadius: BorderRadius.circular(30.0)),
-      child: Icon(_icons[index], size: 25.0, color: Theme.of(context).primaryColor,),
-      
+      child: Icon(
+        _icons[index],
+        size: 25.0,
+        color: Theme.of(context).primaryColor,
+      ),
     );
   }
 
@@ -47,7 +50,11 @@ class _HomeScreenState extends State<HomeScreen> {
                 fontSize: 30.0,
               ),
             ),
-          )
+          ),
+          SizedBox(
+            height: 20.0,
+          ),
+          _buildIcon(0),
         ],
       )),
     );
