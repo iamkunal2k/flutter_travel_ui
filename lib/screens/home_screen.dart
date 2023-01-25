@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:flutter_travel_ui/widgets/destination_corousel.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -23,7 +24,6 @@ class _HomeScreenState extends State<HomeScreen> {
         setState(() {
           _selectedIndex = index;
         });
-        print(_selectedIndex);
       },
       child: Container(
         height: 60.0,
@@ -36,7 +36,9 @@ class _HomeScreenState extends State<HomeScreen> {
         child: Icon(
           _icons[index],
           size: 25.0,
-          color: _selectedIndex == index ?Theme.of(context).primaryColor : Color(0xffb4b1c4),
+          color: _selectedIndex == index
+              ? Theme.of(context).primaryColor
+              : Color(0xffb4b1c4),
         ),
       ),
     );
@@ -74,6 +76,10 @@ class _HomeScreenState extends State<HomeScreen> {
                     (MapEntry map) => _buildIcon(map.key),
                   )
                   .toList()),
+          SizedBox(
+            height: 20.0,
+          ),
+         DestinationCorousel(),
         ],
       )),
     );
