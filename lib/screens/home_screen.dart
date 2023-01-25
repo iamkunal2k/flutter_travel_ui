@@ -54,7 +54,14 @@ class _HomeScreenState extends State<HomeScreen> {
           SizedBox(
             height: 20.0,
           ),
-          _buildIcon(0),
+          Row(
+            children: _icons
+            .asMap()
+            .entries
+            .map((MapEntry map) => _buildIcon(map.key),)
+            
+            .toList()
+          ),
         ],
       )),
     );
